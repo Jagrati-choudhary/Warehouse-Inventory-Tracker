@@ -1,13 +1,17 @@
 # Warehouse-Inventory-Tracker
 
 # Overview
-A simple Java application to manage warehouse inventory. Add products, receive shipments, fulfill orders, and get low stock alerts. Inventory is saved in a CSV file.
+Warehouse Inventory Tracker is a simple Java console application for managing inventory across multiple warehouses.
+Users can add products, receive shipments, fulfill orders, and receive automatic low stock alerts.
+Each warehouse (A, B, or C) maintains its own separate inventory file in CSV format.
 
 # Features
+->Manage multiple warehouses (A, B, C)
 ->Add products with quantity and reorder threshold
-->Receive shipments and fulfill orders
-->Low stock alerts using Observer pattern
-->Save and load inventory from CSV
+->Receive shipments and update stock levels
+->Fulfill customer orders and adjust stock accordingly
+->Automatic low stock alerts implemented using the Observer design pattern
+->Save and load inventory data from CSV files for each warehouse
 
 # How to Run
 -->Compile:
@@ -19,10 +23,25 @@ java Main
 -->Follow console prompts to manage inventory
 
 # Example Workflow:
-->Add product: ID 101, name Laptop, quantity 50, threshold 10
-->Receive shipment: 20 units for ID 101
-->Fulfill order: 30 units for ID 101
-->Low stock alert shows automatically if quantity < 10
+Enter Warehouse (A/B/C): 
+C
+Do you want to add new products? (yes/no)
+yes
+Enter Product ID: 101
+Enter Product Name: Laptop
+Enter Quantity: 50
+Enter Reorder Threshold: 2
+Product added successfully!
+Do you want to add another product? (yes/no)
+no
+
+Choose action: 1-Receive Shipment  2-Fulfill Order  3-Print Inventory  4-Exit
+4
+
+Do you want to add products in another warehouse? (yes/no)
+no
+Exiting program...
+
 
 # Files
 -> Main.java – program entry
@@ -30,4 +49,6 @@ java Main
 -> Warehouse.java – inventory management
 -> StockObserver.java – observer interface
 -> AlertService.java – low stock alerts
--> inventory.csv – stored inventory
+->warehouse_A_inventory.csv	CSV file for Warehouse A inventory
+->warehouse_B_inventory.csv	CSV file for Warehouse B inventory
+->warehouse_C_inventory.csv	CSV file for Warehouse C inventory
