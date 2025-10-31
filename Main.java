@@ -12,10 +12,10 @@ public class Main {
         // CSV file path
         String savePath = "inventory.csv";
 
-        // 🔹 Load previous inventory (if file exists)
+        //  Load previous inventory (if file exists)
         warehouse.loadFromFile(savePath);
 
-        // 🔹 User input for new products
+        //  User input for new products
         System.out.println("Do you want to add new products? (yes/no)");
         String choice = sc.nextLine().trim().toLowerCase();
 
@@ -43,7 +43,7 @@ public class Main {
             choice = sc.nextLine().trim().toLowerCase();
         }
 
-        // 🔹 Example workflow for receiving shipment / fulfilling order
+        //  Example workflow for receiving shipment / fulfilling order
         boolean continueWorkflow = true;
         while (continueWorkflow) {
             System.out.println("\nChoose action: 1-Receive Shipment  2-Fulfill Order  3-Print Inventory  4-Exit");
@@ -75,10 +75,11 @@ public class Main {
             }
         }
 
-        // 🔹 Save current inventory to CSV file
+        //  Save current inventory to CSV file
         warehouse.saveToFile(savePath);
         System.out.println("\n✅ Inventory saved to " + savePath);
 
         sc.close();
     }
 }
+
