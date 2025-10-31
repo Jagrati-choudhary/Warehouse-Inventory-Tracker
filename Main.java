@@ -77,9 +77,10 @@ public class Main {
 
         //  Save current inventory to CSV file
         warehouse.saveToFile(savePath);
-        System.out.println("\n✅ Inventory saved to " + savePath);
+        System.out.println("\n Inventory saved to " + savePath);
 
         sc.close();
     }
 }
+
 
